@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid vw-100 vh-100">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 border bg-light p-3">
+                <h2 class="text-center">Password Generator</h2>
+                <!--card body-->
+                <div class="card-body d-block border shadow rounded bg-white p-3 m-3">
+                    <h3 class="card-title border-bottom p-3">Generate a Password</h3>
+                    <!--password display text area-->
+                    <div class="border-bottom">
+                        <textarea rows="4" class="shadow rounded border w-100 text-center p-4 mt-2 mb-2"
+                            placeholder="Your Secure Password" id="password"></textarea>
+                    </div>
+                    <!--checkbox set-->
+                    <form class="p-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultChecked1" checked>
+                            <label class="custom-control-label" for="defaultChecked1">Special Character</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+                            <label class="custom-control-label" for="defaultChecked2">Numeric Character</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultChecked3" checked>
+                            <label class="custom-control-label" for="defaultChecked3">Lowercase Character</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultChecked4" checked>
+                            <label class="custom-control-label" for="defaultChecked4">Uppercase Character</label>
+                        </div>
+                        <!--range sliders-->
+                        <div class="form-group mt-2">
+                            <label>
+                                <div class="font-weight-bold">Character Limit : </div>
+                            </label>
+                            <span id="sliderValue" class="font-weight-bold"> 8</span>
+                            <input type="range" onclick="rangeSlider()" id="myRange" class="form-control-range"
+                                value="8" min="8" max="128">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" style="border-radius: 35px;" class="btn btn-danger btn-lg mr-5"
+                                onclick='idGenerator()'>Generate Password</button>
+                            <button type="button" style="border-radius: 35px;" class="btn btn-secondary btn-lg ml-5"
+                                onclick='copyToClipboard()'>Copy To Clipboard</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
